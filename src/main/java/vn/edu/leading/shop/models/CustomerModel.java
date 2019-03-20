@@ -13,7 +13,6 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 @Table(name = "shop_customers")
 public class CustomerModel extends BassModel<CustomerModel>{
-
     @NotEmpty
     @Column (name = "customer_name",nullable = false)
     private String customerName;
@@ -23,6 +22,7 @@ public class CustomerModel extends BassModel<CustomerModel>{
     private String contactName;
 
     private String address;
+
 
     private String city;
 
