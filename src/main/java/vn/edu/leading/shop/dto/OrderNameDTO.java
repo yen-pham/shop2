@@ -8,7 +8,10 @@ import lombok.*;
 @Setter
 @ToString
 public class OrderNameDTO {
+
     private String customerName;
+
     private String firstNameEmployee;
+
     private String shipperName;
 }

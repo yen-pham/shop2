@@ -13,8 +13,10 @@ import vn.edu.leading.shop.models.OrderDetailModel;
 import vn.edu.leading.shop.services.OrderDetailService;
 
 import javax.validation.Valid;
+
 @Controller
 public class OrderDetailController {
+
     private final OrderDetailService orderDetailService;
 
     public OrderDetailController(OrderDetailService orderDetailService) {

@@ -13,9 +13,10 @@ import vn.edu.leading.shop.models.SupplierModel;
 import vn.edu.leading.shop.services.SupplierService;
 
 import javax.validation.Valid;
-@Controller
 
+@Controller
 public class SupplierController {
+
     private final SupplierService supplierService;
 
     public SupplierController(SupplierService supplierService) {
