@@ -1,32 +1,45 @@
 package vn.edu.leading.shop.models;
 
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.HashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
+@Setter
 @ToString
 @Entity
 @Table(name = "shop_orders")
 public class OrderModel extends BassModel<OrderModel> {
 
-    @NotEmpty
-    @Column(name = "customer_id", nullable = false)
-    private Long customerId;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "customer_id", nullable = false)
+    @BatchSize(size = 50)
+    private CustomerModel customerModel;
 
-    @NotEmpty
-    @Column(name = "employee_id", nullable = false)
-    private Long employeeId;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "shipper_id", nullable = false)
+    @BatchSize(size = 50)
+    private ShipperModel shipperModel;
 
-    private String orderDate;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "employee_id", nullable = false)
+    private EmployeeModel employeeModel;
 
-    @NotEmpty
-    @Column(name = "shipper_id", nullable = false)
-    private Long shipperId;
+    @OneToMany(
+            mappedBy = "orderModel",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    @Fetch(FetchMode.SELECT)
+    @BatchSize(size = 50)
+    private Set<OrderDetailModel> orderDetailModels = new HashSet<>();
 }
