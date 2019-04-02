@@ -17,4 +17,5 @@ public interface OrderDetailService {
     void save(OrderDetailModel orderDetail);
 
     boolean delete(Long id);
+
 }

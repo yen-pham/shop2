@@ -2,13 +2,8 @@ package vn.edu.leading.shop.models;
 
 import lombok.*;
 import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import java.util.HashSet;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,7 +12,7 @@ import java.util.Set;
 @ToString
 @Entity
 @Table(name = "shop_order_details")
-public class OrderDetailModel extends BassModel<OrderDetailModel> {
+public class OrderDetailModel extends BaseModel<OrderDetailModel> {
 
     private Long quantity;
 

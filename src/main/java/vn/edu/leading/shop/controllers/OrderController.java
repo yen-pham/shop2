@@ -44,11 +44,11 @@ public class OrderController {
         return "orders/form";
     }
 
-    @GetMapping("/orders/{id}/edit")
-    public String edit(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("orderModel", orderService.findById(id));
-        return "orders/form";
-    }
+//    @GetMapping("/orders/{id}/edit")
+//    public String edit(@PathVariable("id") Long id, Model model) {
+//        model.addAttribute("orderModel", orderService.findById(id));
+//        return "orders/form";
+//    }
 
     @PostMapping("/orders/save")
     public String save(@Valid OrderModel order, BindingResult result, RedirectAttributes redirect) {
@@ -70,11 +70,13 @@ public class OrderController {
             return "redirect:/orders";
         }
     }
-
     @GetMapping("/orders/{id}/print")
-    public String print(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("name", orderService.getNameCustomer(id));
-        model.addAttribute("list", orderService.listProduct(id));
-        return "orders/print";
+    public String print(@PathVariable Long id, Model model) {
+
+            model.addAttribute("customerName",orderService.findById(id).getCustomerModel().getCustomerName());
+            model.addAttribute("employeeName",orderService.findById(id).getEmployeeModel().getFirstName());
+            model.addAttribute("shipperName",orderService.findById(id).getShipperModel().getShipperName());
+            return "orders/list";
+
     }
 }

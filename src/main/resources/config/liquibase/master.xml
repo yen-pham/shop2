@@ -13,5 +13,7 @@
     <include file="config/liquibase/changelog/shop_shippers.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/shop_suppliers.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190323080713_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324043420_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190402142509_changelog.xml" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>
