@@ -16,8 +16,8 @@ import java.util.Set;
 @Setter
 @ToString
 @Entity
-@Table(name = "shop_role")
+@Table(name = "shop_roles")
 public class RoleModel extends BaseModel<RoleModel> {
-
+    
     private String name;
 }
