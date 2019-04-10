@@ -6,11 +6,14 @@ import vn.edu.leading.shop.models.CategoryModel;
 import vn.edu.leading.shop.models.UserModel;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserModel, Long> {
 
-    UserModel findByUsernameContaining(String term);
+    Optional<UserModel> findByUsername(String username);
+
+    //Optional<UserModel> findByEmail(String email);
 
     List<UserModel> findAllByUsernameContaining(String term);
 }

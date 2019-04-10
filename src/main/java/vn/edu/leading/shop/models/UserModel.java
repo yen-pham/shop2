@@ -25,7 +25,7 @@ public class UserModel extends BaseModel<UserModel> {
     @NotEmpty
     @Column(name = "password", nullable = false)
     private String password;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "shop_user_role",
             joinColumns = @JoinColumn(name = "user_id"),

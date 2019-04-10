@@ -9,5 +9,7 @@ import java.util.List;
 @Repository
 public interface RoleRepository extends JpaRepository<RoleModel, Long> {
 
-    List<RoleModel> findByNameContaining(String term);
+   List<RoleModel> findByNameContaining(String term);
+
+   RoleModel findByName(String term);
 }
