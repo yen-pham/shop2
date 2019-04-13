@@ -78,5 +78,3 @@ public class UserServiceIpml implements UserService {
         userRepository.save(userModel);
     }
 }
-
-
