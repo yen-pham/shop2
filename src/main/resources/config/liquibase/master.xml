@@ -15,5 +15,6 @@
     <include file="config/liquibase/changelog/20190323080713_changelog.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190324043420_changelog.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190403132806_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/role-user.xml" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>
