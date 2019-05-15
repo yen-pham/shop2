@@ -1,7 +1,6 @@
 package vn.edu.leading.shop.services;
 
 
-import vn.edu.leading.shop.models.CustomerModel;
 import vn.edu.leading.shop.models.UserModel;
 
 import java.util.List;
@@ -21,4 +20,5 @@ public interface UserService {
     boolean delete(Long id);
 
     void register(UserModel userModel) throws Exception;
+
 }

@@ -1,5 +1,6 @@
 package vn.edu.leading.shop.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
@@ -42,6 +43,7 @@ public class EmployeeModel extends BaseModel<EmployeeModel> {
     )
     @Fetch(FetchMode.SELECT)
     @BatchSize(size = 50)
+    @JsonBackReference
     private Set<OrderModel> orderModels = new HashSet<>();
 
 }

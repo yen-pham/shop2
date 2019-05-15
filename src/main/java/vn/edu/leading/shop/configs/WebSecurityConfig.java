@@ -32,11 +32,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/register").anonymous()
-                    .antMatchers("/forgot-password").anonymous()
-                    .antMatchers("/webjars/**").permitAll()
-                    .antMatchers("/admin/**").hasRole("ADMIN")
-                    .anyRequest().authenticated()
+                .antMatchers("/register").anonymous()
+                .antMatchers("/forgot-password").anonymous()
+                .antMatchers("/webjars/**").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/api/**").anonymous()
+
+                .anyRequest().authenticated()
                 .and()
                     .formLogin()
                     .loginPage("/login")

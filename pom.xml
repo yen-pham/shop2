@@ -93,6 +93,13 @@
 			<version>4.0.2</version>
 		</dependency>
 
+		<!-- Mail -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<!-- Mail -->
+
 		<!-- Add for SB Admin -->
 	</dependencies>
 
@@ -184,6 +191,7 @@
 				<spring.profiles.active>heroku</spring.profiles.active>
 			</properties>
 		</profile>
+
 	</profiles>
 
 </project>

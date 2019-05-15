@@ -1,5 +1,9 @@
 package vn.edu.leading.shop.services;
 
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,11 +22,13 @@ public class UserServiceIpml implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
+    private JavaMailSender javaMailSender;
 
-    public UserServiceIpml(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
+    public UserServiceIpml(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, JavaMailSender javaMailSender) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
+        this.javaMailSender = javaMailSender;
     }
 
     @Override
@@ -63,6 +69,7 @@ public class UserServiceIpml implements UserService {
         userRepository.delete(userModel);
         return true;
     }
+
 
     @Override
     @Transactional

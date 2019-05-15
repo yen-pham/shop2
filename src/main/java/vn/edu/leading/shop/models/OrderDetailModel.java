@@ -1,5 +1,6 @@
 package vn.edu.leading.shop.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.annotations.BatchSize;
 
@@ -19,10 +20,12 @@ public class OrderDetailModel extends BaseModel<OrderDetailModel> {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "product_id")
     @BatchSize(size = 50)
+    @JsonManagedReference
     private  ProductModel productModel;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "order_id")
     @BatchSize(size = 50)
+    @JsonManagedReference
     private OrderModel orderModel;
 }

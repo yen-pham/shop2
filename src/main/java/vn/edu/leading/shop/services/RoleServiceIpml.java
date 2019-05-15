@@ -2,9 +2,7 @@ package vn.edu.leading.shop.services;
 
 import org.springframework.stereotype.Service;
 import vn.edu.leading.shop.models.RoleModel;
-import vn.edu.leading.shop.models.UserModel;
 import vn.edu.leading.shop.repositories.RoleRepository;
-import vn.edu.leading.shop.repositories.UserRepository;
 
 import java.util.List;
 

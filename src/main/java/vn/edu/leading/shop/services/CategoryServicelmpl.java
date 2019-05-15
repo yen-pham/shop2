@@ -40,8 +40,8 @@ public class CategoryServicelmpl implements CategoryService {
     }
 
     @Override
-    public void save(CategoryModel category) {
-        categoryRepository.save(category);
+    public CategoryModel save(CategoryModel category) {
+       return categoryRepository.save(category);
     }
 
     @Override
